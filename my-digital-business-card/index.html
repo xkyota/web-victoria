@@ -8,7 +8,7 @@
 	<body>
 		<header>
 			<h1 id="title">Maksym Durikhin</h1>
-			<img
+			<img class="profile-photo"
 				width="100"
 				height="100"
 				src="./maksym.jpg"
@@ -20,18 +20,18 @@
 				<ul>
 					<li><a href="#home">Home</a></li>
 					<li><a href="#contacts">Contacts</a></li>
-					<li><a href="#faq">FAQ</a></li>
+					<li><a href="#tech-stack">Tech stack</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<main>
+		<main id="home">
 			<section class="about">
 				<h2 class="underline">About me:</h2>
 
 				<article>
 					<p>
-						<b> Motivated </b> second-year student in Latvia
+						<span class="izcelts">Motivated</span> second-year student in Latvia
 						studying information technology who is particularly
 						interested in web technologies and programming.
 						<br />
@@ -57,7 +57,7 @@
 				<a href="https://github.com/xkyotarl">My GitHub</a>
 			</section>
 
-			<section class="tech-stack">
+			<section class="tech-stack" id="tech-stack">
 				<h2>My tech stack:</h2>
 				<ol>
 					<li>JavaScript</li>
@@ -121,7 +121,7 @@
 			</aside>
 		</main>
 
-		<footer>
+		<footer id="contacts">
 			<h2>Contacts:</h2>
 
 			<ul>
@@ -134,19 +134,19 @@
 
 			<h2>Contact form:</h2>
 			<form>
-				<label for="username">Name:</label><br />
-				<input type="text" id="username" name="userName" /><br /><br />
+				<label for="username">Name:</label>
+				<input type="text" id="username" name="userName" />
 
-				<label for="surname">Surname:</label><br />
+				<label for="surname">Surname:</label>
 				<input
 					type="text"
 					id="surname"
 					name="userSurnname"
-				/><br /><br />
+				/>
 
-				<label for="email">Email:</label><br />
-				<input type="email" id="email" name="userEmail">
-				<br /><br />
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="userEmail" />
+				<button type="submit">Send</button>
 			</form>
 		</footer>
 

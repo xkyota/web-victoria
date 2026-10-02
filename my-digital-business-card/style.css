@@ -1,7 +1,7 @@
 .container {
 	width: 200px;
 	display: grid;
-	
+
 	grid-template-columns: auto auto auto;
 }
 
@@ -15,7 +15,6 @@
 	text-align: center;
 }
 
-
 body {
 	margin: 0;
 	padding: 0;
@@ -24,6 +23,11 @@ body {
 	font-family: Arial, sans-serif;
 	color: rgb(51, 51, 51);
 }
+
+/* 
+   block: header h1, main, .about p.
+   inline: nav a, .about li, footer a. 
+*/
 
 main {
 	max-width: 900px;
@@ -37,6 +41,42 @@ header {
 	padding: 25px;
 	text-align: center;
 }
+
+.profile-photo {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+/* Kamēr img bija inline, margin: 0 auto to necentrēja, jo inline
+   elementam automātiskās horizontālās malas neizdala brīvo vietu.
+   Kā block elements attēls aizņem savu platumu, un auto malas
+   sadala atlikušo vietu abās pusēs. */
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+
+nav li {
+	display: inline-block;
+	margin: 0 12px;
+}
+
+.izcelts {
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	font-weight: bold;
+}
+
+/* Izmēģinājums ar span.izcelts: pie display: inline norādītie
+   width: 200px un height: 40px nemainīja teksta laukuma izmēru.
+   Pēc pārslēgšanas uz inline-block tas kļuva 200 × 40 px liels,
+   jo inline-block saglabā vietu teksta rindā, bet pieņem width/height. */
 
 header h2 {
 	color: white;
@@ -55,12 +95,27 @@ footer h2 {
 
 footer label {
 	color: white;
+	display: block;
+	margin-bottom: 5px;
+}
+
+footer form input {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 320px;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+
+footer form button {
+	display: block;
+	padding: 8px 16px;
 }
 
 h1,
 h2,
 h3 {
-
 	font-family: "Times New Roman", sans-serif;
 	font-weight: bold;
 }
@@ -173,12 +228,19 @@ aside {
 	background-color: white;
 }
 
-
 footer a:link,
 footer a:visited {
 	color: white;
 }
 
-ul{ 
+ul {
 	list-style: none;
 }
+
+/* Paslēpšanas izmēģinājums (noteikumi atstāti komentārā, lai abi
+   elementi atkal būtu redzami):
+   header h2 { display: none; }
+   .about h3 { visibility: hidden; }
+   display: none izņem elementu no izkārtojuma, tādēļ nākamie elementi
+   pārvietojas uz augšu. visibility: hidden tikai paslēpj elementu;
+   tā vieta lapā paliek tukša. */
