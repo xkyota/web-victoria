@@ -232,7 +232,6 @@ ul {
 	object-fit: cover;
 }
 
-/* Mobile-first: ārpus @media esošais galerijas izkārtojums ir mazajiem ekrāniem. */
 @media (max-width: 600px) {
 	nav {
 		width: 100%;
@@ -262,25 +261,4 @@ ul {
 	}
 }
 
-/*
-  Uzdevuma novērojumi:
-  1. DevTools ierīces režīmā 390px: bez viewport meta parasti innerWidth = 980px
-     (lapa izskatās kā samazināta darbvirsmas lapa); ar meta innerWidth = 390px
-     (lapa lieto mobilo izkārtojumu un teksts ir salasāmāks).
-  2. Pie 320px navigācija pirms mobilā režģa varēja pārplūst vienā rindā;
-     galerija lieto vienu kolonnu, bet kartīte ir 280px plata. Pie 1280px
-     kartītes platums ir 520px. max-width: 100% ierobežo kartīti ar vecāka platumu.
-  3. Navigācijas noteikumi strādā, ja viewport ir ne vairāk kā 600px.
-  4. max-width: 600px attiecas uz platumu līdz 600px; min-width: 600px — no 600px.
-     Ārpus @media noteiktais stils ir mobile-first un darbojas 320px ekrānā.
-  5. 40px = 2.5rem, 24px = 1.5rem (pie noklusētā 16px saknes izmēra).
-     Ar px iestatīti virsraksti nemainījās līdz ar pārlūka bāzes fonta izmēru;
-     rem virsraksti mērogojas līdzi tam.
-  6. 8vw ir 102.4px pie 1280px un 25.6px pie 320px. clamp(1.75rem, 8vw,
-     2.5rem) nosaka minimumu 28px, mērogojamo vērtību 8vw un maksimumu 40px.
-  7. Kopsavilkums:
-     | Bez @media                 | Ar @media                         | Kāpēc                         |
-     | auto-fit/minmax galerijai  | navigācijas 2 kolonnu režģis      | telefonā vajag citu navigāciju |
-     | max-width kartītei         | .liela attēla span 2 kolonnas     | lielais attēls tikai platākā   |
-     | rem un vw fontu izmēriem   | (sākas no 600px)                  | izkārtojumā                    |
-*/
+
